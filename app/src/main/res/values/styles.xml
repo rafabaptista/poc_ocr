@@ -1,0 +1,33 @@
+<resources>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
+    <style name="IDwallSDKFullscreen" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="idwallSdkPrimary">#1a284f</item>
+        <item name="idwallSdkPrimaryVariant">#2f4784</item>
+        <item name="idwallSdkSecondary">#4aa5ba</item>
+        <item name="idwallSdkSecondaryVariant">#1a284f</item>
+        <item name="idwallSdkTextPrimary">#ffffff</item>
+        <item name="idwallSdkTextPrimaryVariant">#4aa5ba</item>
+        <item name="idwallSdkTextSecondary">#95aae1</item>
+        <item name="idwallSdkTextSecondaryVariant">#55dddddd</item>
+    </style>
+
+    <style name="OverrideIdwallSDK" parent="IDwallSDKFullscreen">
+        <item name="idwallSdkPrimary">#ffffff</item>
+        <item name="idwallSdkPrimaryVariant">#acacac</item>
+        <item name="idwallSdkSecondary">#FF6557F3</item>
+        <item name="idwallSdkSecondaryVariant">#4033c9</item>
+        <item name="idwallSdkTextPrimary">#000000</item>
+        <item name="idwallSdkTextPrimaryVariant">#606060</item>
+        <item name="idwallSdkTextSecondary">#FF6557F3</item>
+        <item name="idwallSdkTextSecondaryVariant">#999999</item>
+    </style>
+
+</resources>
