@@ -4,7 +4,6 @@ import android.app.AlertDialog
 import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-//import co.idwall.idwallsdk.IDwallSDK
 import co.idwall.toolkit.IDwallToolkit
 import co.idwall.toolkit.flow.core.Doc
 import co.idwall.toolkit.flow.core.Flow
@@ -15,10 +14,6 @@ import android.util.Log
 @Suppress("DEPRECATED_IDENTITY_EQUALS")
 class MainActivity : AppCompatActivity() {
     companion object {
-        /*private enum class EventOption {
-            RG_FRONT, RG_BACK, CNH, GENERIC, CNH_FACE, RG_FRONT_FACE, GENERIC_FACE, ONLY_FACE, SELECTOR,
-        }
-*/
         private enum class EventFlow {
             COMPLETE_RG, RG_ONLY, COMPLETE_CNH, CNH_ONLY, FACE, COMPLETE_SELECTOR, DOC_SELECTOR
         }
@@ -78,41 +73,6 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    //método antigo usando SDK id wall
-    /*private fun onClickButtonSDK(event: EventOption) {
-        IDwallSDK.setAuthKey("cdd5282c767055cf6a6a0929fe33c5fd")
-
-        when(event){
-            EventOption.CNH -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_DOCUMENT_ONLY, IDwallSDK.DOC_CNH)
-            }
-            EventOption.CNH_FACE -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_COMPLETE_FLOW, IDwallSDK.DOC_CNH)
-            }
-            EventOption.RG_BACK -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_COMPLETE_FLOW, IDwallSDK.DOC_RG_BACK)
-            }
-            EventOption.RG_FRONT -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_DOCUMENT_ONLY, IDwallSDK.DOC_RG_FRONT)
-            }
-            EventOption.RG_FRONT_FACE -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_COMPLETE_FLOW, IDwallSDK.DOC_RG_FRONT)
-            }
-            EventOption.GENERIC -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_DOCUMENT_ONLY, IDwallSDK.DOC_GENERIC)
-            }
-            EventOption.GENERIC_FACE -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_COMPLETE_FLOW, IDwallSDK.DOC_GENERIC)
-            }
-            EventOption.ONLY_FACE -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_FACE_ONLY, IDwallSDK.CAPTURE_VIEW)
-            }
-            EventOption.SELECTOR -> {
-                IDwallSDK.startFlow(this, IDwallSDK.OP_COMPLETE_FLOW)
-            }
-        }
-    }*/
-
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
@@ -140,29 +100,5 @@ class MainActivity : AppCompatActivity() {
         } else {
             Log.d("ErrorIDWALL", "Response Fail")
         }
-
-        //old
-        /*if (requestCode == IDwallSDK.requestCode && resultCode === RESULT_OK) {
-            if (data != null) {
-                try {
-                    val token = data.getStringExtra("token")
-
-                    print("Token: $token")
-
-                    AlertDialog.Builder(this)
-                            .setTitle("Protocolo IdWall")
-                            .setMessage(token)
-                            .setCancelable(false)
-                            .setNeutralButton(android.R.string.ok, null).create()
-                            .show()
-                } catch (e: Exception) {
-                    e.printStackTrace()
-                }
-            } else {
-                IDwallSDK.debug("Data not found")
-            }
-        } else {
-            IDwallSDK.debug("Response failure")
-        }*/
     }
 }

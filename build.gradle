@@ -26,9 +26,6 @@ allprojects {
                 password = "<senha>"
             }
         }
-        maven {
-            url "https://mvnrepository.com/artifact/org.openpnp/opencv"
-        }
     }
 }
 
